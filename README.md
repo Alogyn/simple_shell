@@ -17,7 +17,7 @@ By completing this project, you will:
 The goal of this project is to develop a simple shell in the C programming language. A shell is a fundamental component of operating systems, allowing users to interact with the system through a command-line interface. This project will guide you through the process of creating a basic shell, including parsing user input, executing commands, and handling various features typical of a shell environment
 
 - **[shell.h](shell.h)**
-    - **()**
+    - **()** 
 
 - **[main.c](main.c)**
     - **()**
@@ -44,13 +44,13 @@ The goal of this project is to develop a simple shell in the C programming langu
     - **concatenate_nstring()** Concatenates a specified number of characters from one string to another. The function takes a destination buffer, a source buffer, and the number of characters to concatenate. It finds the null terminator in the destination buffer, then appends up to n characters from the source buffer to the destination buffer. The resulting string is null-terminated if there is space left, and the original destination buffer's address is returned.
 
 - **[string_functions3.c](string_functions3.c)**
-    - **check_delimiter()** Checks if a given character is a delimiter within a specified string of delimiters. The function iterates through the characters in the delimiter string, returning 1 if the character matches any of the delimiters, and 0 otherwise.
+    - **[int length_string(char *str)](string_functions3.c)** Checks if a given character is a delimiter within a specified string of delimiters. The function iterates through the characters in the delimiter string, returning 1 if the character matches any of the delimiters, and 0 otherwise.
 
-    - **check_needle()** Checks if a specified substring (needle) is present at the beginning of a given string (haystack). The function returns a pointer to the location in the haystack after the needle if the needle is found at the beginning; otherwise, it returns NULL.
+    - **[char *duplicate_string(const char *str)](string_functions3.c)** Checks if a specified substring (needle) is present at the beginning of a given string (haystack). The function returns a pointer to the location in the haystack after the needle if the needle is found at the beginning; otherwise, it returns NULL.
 
-    - **split_string()** Splits a string into an array of words based on a set of delimiters. The function counts the number of words in the string, allocates memory for an array of strings, and extracts individual words by skipping delimiters. If memory allocation fails, the function returns NULL.
+    - **[int compare_string(char *str1, char *str2)](string_functions3.c)** Splits a string into an array of words based on a set of delimiters. The function counts the number of words in the string, allocates memory for an array of strings, and extracts individual words by skipping delimiters. If memory allocation fails, the function returns NULL.
 
-    - **split_strdelim()** Splits a string into an array of words based on a single delimiter. The function counts the number of words in the string, allocates memory for an array of strings, and extracts individual words by skipping occurrences of the specified delimiter. If memory allocation fails, the function returns NULL.
+    - **[char *strchar_locate(char *str, char c)](string_functions3.c)** Splits a string into an array of words based on a single delimiter. The function counts the number of words in the string, allocates memory for an array of strings, and extracts individual words by skipping occurrences of the specified delimiter. If memory allocation fails, the function returns NULL.
 
 - **[print_-nctions.c](print_-nctions.c)**
     - **()**
@@ -83,7 +83,11 @@ The goal of this project is to develop a simple shell in the C programming langu
     - **()**
 
 - **[info_functions.c](info_functions.c)**
-    - **()**
+    - **[void set_info(data_t *data_use, char **av)](info_functions.c)** Sets information in a data structure based on command line arguments. The function takes a pointer to a data structure (`data_t`) and an array of strings representing command line arguments. It sets the filename from the command line arguments and parses the arguments to create the `argv` array. If parsing fails, it handles the case and sets `argv` with a single element containing the original argument. The function then counts the number of arguments in `argv`, sets `argc` accordingly, and replaces aliases and variables in `argv`.
+
+    - **[void free_info(data_t *data_use, int global_set)](info_functions.c)** Frees memory allocated for shell information in the data structure. The function takes a pointer to a data structure (`data_t`) and a flag (`global_set`). It frees the memory allocated for `argv`, sets `path` to NULL, and frees additional resources based on the value of `global_set`. If `global_set` is true, it frees the argument if `buffer_command` is not set, the environment variables list, history list, alias list, environment string, buffer_command, and closes the file descriptor
+
+    - **[void clear_info(data_t *data_use)](info_functions.c)** Clears information in a data structure. The function takes a pointer to a data structure (`data_t`) and sets the argument, `argc`, `argv`, and `path` to NULL or zero, effectively clearing the information stored in the data structure.
 
 - **[shell_operations_functions.c](shell_operations_functions.c)**
     - **()**
@@ -120,7 +124,7 @@ For detailed instructions and examples, refer to the respective script files in 
 
 - **Abderrahim Filali**
 
-## Special Thanks for Project Guidance to
+## Special Thanks for Project Guidance to 
 
 - **Julien Barbier**
 
