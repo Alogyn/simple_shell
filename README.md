@@ -56,7 +56,15 @@ The goal of this project is to develop a simple shell in the C programming langu
     - **()**
 
 - **[print_error_functions.c](print_error_functions.c)**
-    - **()**
+    - **[void _eputs()](print_error_functions.c)** Prints a string to the standard error output. The function iterates through each character of the input string and uses `_eputchar` to print each character to the standard error output.
+
+    - **[()](print_error_functions.c)** Writes a character to a specified file descriptor or flushes the buffer. The function uses a static buffer and index to accumulate characters until the buffer is full or a flush signal (`BUFFER_FLUSH`) is received. It then flushes the buffer by writing its contents to the specified file descriptor.
+
+    - **[()](print_error_functions.c)** Writes a string to a specified file descriptor. The function iterates through the input string, using `_putfd` to write each character to the specified file descriptor. It returns the total number of characters written.
+
+    - **[()](print_error_functions.c)** Writes a character to the standard error file descriptor. The function uses a static buffer and index to accumulate characters until the buffer is full or a flush signal (`BUFFER_FLUSH`) is received. It writes the buffer to standard error if it is not empty. Returns 1 for successful write, -1 for BUFFER_FLUSH, and 0 otherwise.
+
+    - **[()](print_error_functions.c)** Prints an error message to the standard error. The function takes a pointer to a data structure (`data_t`) and an error message string (`estr`). It prints the filename, line count, command, and the error message to standard error using the previously defined `_eputs` and `print_decimal` functions.
 
 - **[memory_functions.c](memory_functions.c)**
     - **()**
@@ -83,11 +91,11 @@ The goal of this project is to develop a simple shell in the C programming langu
     - **()**
 
 - **[info_functions.c](info_functions.c)**
-    - **[void set_info(data_t *data_use, char **av)](info_functions.c)** Sets information in a data structure based on command line arguments. The function takes a pointer to a data structure (`data_t`) and an array of strings representing command line arguments. It sets the filename from the command line arguments and parses the arguments to create the `argv` array. If parsing fails, it handles the case and sets `argv` with a single element containing the original argument. The function then counts the number of arguments in `argv`, sets `argc` accordingly, and replaces aliases and variables in `argv`.
+    - **[void set_info()](info_functions.c)** Sets information in a data structure based on command line arguments. The function takes a pointer to a data structure (`data_t`) and an array of strings representing command line arguments. It sets the filename from the command line arguments and parses the arguments to create the `argv` array. If parsing fails, it handles the case and sets `argv` with a single element containing the original argument. The function then counts the number of arguments in `argv`, sets `argc` accordingly, and replaces aliases and variables in `argv`.
 
-    - **[void free_info(data_t *data_use, int global_set)](info_functions.c)** Frees memory allocated for shell information in the data structure. The function takes a pointer to a data structure (`data_t`) and a flag (`global_set`). It frees the memory allocated for `argv`, sets `path` to NULL, and frees additional resources based on the value of `global_set`. If `global_set` is true, it frees the argument if `buffer_command` is not set, the environment variables list, history list, alias list, environment string, buffer_command, and closes the file descriptor
+    - **[void free_info()](info_functions.c)** Frees memory allocated for shell information in the data structure. The function takes a pointer to a data structure (`data_t`) and a flag (`global_set`). It frees the memory allocated for `argv`, sets `path` to NULL, and frees additional resources based on the value of `global_set`. If `global_set` is true, it frees the argument if `buffer_command` is not set, the environment variables list, history list, alias list, environment string, buffer_command, and closes the file descriptor
 
-    - **[void clear_info(data_t *data_use)](info_functions.c)** Clears information in a data structure. The function takes a pointer to a data structure (`data_t`) and sets the argument, `argc`, `argv`, and `path` to NULL or zero, effectively clearing the information stored in the data structure.
+    - **[void clear_info()](info_functions.c)** Clears information in a data structure. The function takes a pointer to a data structure (`data_t`) and sets the argument, `argc`, `argv`, and `path` to NULL or zero, effectively clearing the information stored in the data structure.
 
 - **[shell_operations_functions.c](shell_operations_functions.c)**
     - **()**
