@@ -232,7 +232,8 @@ int _getline(data_t *data_use, char **ptr, size_t *length);
 
 /* Chain functions */
 int detect_chain(data_t *data_use, char *buffer, size_t *ptr);
-void check_chain(data_t *data_use, char *buffer, size_t *ptr, size_t i, size_t length);
+void check_chain(data_t *data_use, char *buffer, size_t *ptr,
+		size_t i, size_t length);
 
 /* Alt functions */
 int replace_string(char **old_str, char *new_str);
