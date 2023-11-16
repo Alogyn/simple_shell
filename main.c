@@ -15,9 +15,9 @@ void open_error(const char *program_name, const char *file_name)
 {
 	/* Print program name, error message, file name, and exit with status 2 */
 	_eputs(program_name);
-	_eputs(": 0: Can't open ");
+	_eputs(": 0: cannot open ");
 	_eputs(file_name);
-	_eputs('\n');
+	_eputs(": No such file\n");
 	_eputchar(BUFFER_FLUSH);
 	exit(2);
 }
