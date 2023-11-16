@@ -44,13 +44,13 @@ The goal of this project is to develop a simple shell in the C programming langu
     - **[char *concatenate_nstring()](string_functions2.c)** Concatenates a specified number of characters from one string to another. The function takes a destination buffer, a source buffer, and the number of characters to concatenate. It finds the null terminator in the destination buffer, then appends up to n characters from the source buffer to the destination buffer. The resulting string is null-terminated if there is space left, and the original destination buffer's address is returned.
 
 - **[string_functions3.c](string_functions3.c)**
-    - **[int length_string()](string_functions3.c)** Checks if a given character is a delimiter within a specified string of delimiters. The function iterates through the characters in the delimiter string, returning 1 if the character matches any of the delimiters, and 0 otherwise.
+    - **[int check_delimiter()](string_functions3.c)** Checks if a given character is a delimiter within a specified string of delimiters. The function iterates through the characters in the delimiter string, returning 1 if the character matches any of the delimiters, and 0 otherwise.
 
-    - **[char *duplicate_string()](string_functions3.c)** Checks if a specified substring (needle) is present at the beginning of a given string (haystack). The function returns a pointer to the location in the haystack after the needle if the needle is found at the beginning; otherwise, it returns NULL.
+    - **[char *check_needle()](string_functions3.c)** Checks if a specified substring (needle) is present at the beginning of a given string (haystack). The function returns a pointer to the location in the haystack after the needle if the needle is found at the beginning; otherwise, it returns NULL.
 
-    - **[int compare_string()](string_functions3.c)** Splits a string into an array of words based on a set of delimiters. The function counts the number of words in the string, allocates memory for an array of strings, and extracts individual words by skipping delimiters. If memory allocation fails, the function returns NULL.
+    - **[char **split_string]()](string_functions3.c)** Splits a string into an array of words based on a set of delimiters. The function counts the number of words in the string, allocates memory for an array of strings, and extracts individual words by skipping delimiters. If memory allocation fails, the function returns NULL.
 
-    - **[char *strchar_locate()](string_functions3.c)** Splits a string into an array of words based on a single delimiter. The function counts the number of words in the string, allocates memory for an array of strings, and extracts individual words by skipping occurrences of the specified delimiter. If memory allocation fails, the function returns NULL.
+    - **[char **split_strdelim()](string_functions3.c)** Splits a string into an array of words based on a single delimiter. The function counts the number of words in the string, allocates memory for an array of strings, and extracts individual words by skipping occurrences of the specified delimiter. If memory allocation fails, the function returns NULL.
 
 - **[print_-nctions.c](print_-nctions.c)**
     - **()**
