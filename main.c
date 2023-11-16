@@ -19,7 +19,7 @@ void open_error(const char *program_name, const char *file_name)
 	_eputs(file_name);
 	_eputs("\n");
 	_eputchar(BUFFER_FLUSH);
-	exit(2);
+	exit(127);
 }
 
 /**
